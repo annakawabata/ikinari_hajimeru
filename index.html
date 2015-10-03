@@ -8,17 +8,21 @@
   </head>
   <body>
 
+  <!--post送信で、ここで入力したデータを指定したページへ持っていく-->
   <form method = "post" action = "check.php" ><!--飛び先を指定する-->
   ニックネームを入力してください。</br>
   <input name = "nickname" type = "text" style = "width:100px"></br>
   メールアドレスを入力してください。</br>
   <input name = "email" type = "text" style = "width:200px"></br>
+  パスワードを入力してください。</br>
+  <input name = "passward" type = "passward" style = "width:200px"></br>
   ご意見を一言でお聞かせください。</br>
   <input name = "goiken" type = "text" style = "width:300px"></br>
   
   </br>
-
-  <input type = "submit" value = "送信"><!--submitボタンでデータを共に次のページへ持っていく-->
+  
+  <!--submitボタンでデータを共に次のページへ持っていく-->
+  <input type = "submit" value = "送信">
   </form>
 
   </body>
