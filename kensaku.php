@@ -45,6 +45,9 @@
         }
 
     ?>
+
+    </br>
+    <a href="kensaku.html">検索画面に戻る</a></br>
   </body>
 </html>
   <?php

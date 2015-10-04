@@ -40,5 +40,7 @@
         }
 
     ?>
+    </br>
+    <a href="menu.html">メニューに戻る</a></br>
   </body>
 </html>
