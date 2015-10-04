@@ -8,6 +8,13 @@
   </head>
   <body>
     <?php
+
+    //データベース関連
+    //下に書いてあるやつとセット①
+    $db = mysqli_connect('localhost', 'root', 'root', 'ikinari_hajimeru') or die(mysqli_connect_error());
+    mysqli_set_charset($db, 'utf8');
+    //--------------------------------------------
+
     $nickname = $_POST['nickname'];
     $email = $_POST['email'];
     $passward = $_POST['passward'];
@@ -36,12 +43,17 @@
     $mail_sub = 'アンケート受け付けました。';//メールタイトル
     $mail_body = $nickname."様へ\nアンケートご協力ありがとうございました。";//メール本文
     $mail_body = html_entity_decode($mail_body,ENT_QUOTES,"UTF-8");
+    $mail_head = 'From:xxx@xxx.co.jp';
     mb_language('Japanese');
     mb_internal_encoding("UTF-8");
     mb_send_mail($email,$mail_sub,$mail_body,$mail_head);
+    
+    //------------------------------------------
+    //データベース関連
+    //一番上に書いてある文章とセット⑵
+    $sql = 'INSERT INTO anketo(nickname,email,passward,goiken)VALUES("'.$nickname.'","'.$email.'","'.$passward.'","'.$goiken.'")';
+    mysqli_query($db, $sql) or die(mysqli_error($db));
+    exit();
     ?>
-
-  </form>
-
   </body>
 </html>
