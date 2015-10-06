@@ -13,7 +13,7 @@
     <?php
     $nickname = $_POST['nickname'];
     $email = $_POST['email'];
-    $passward = $_POST['passward'];
+    $password = $_POST['password'];
     $goiken = $_POST['goiken'];
 
     //htmlspecialchars
@@ -21,7 +21,7 @@
     //他から入力されたHTMLを効かないようにする、怪しい文字を無毒化すること
     $nickname = htmlspecialchars($nickname);
     $email = htmlspecialchars($email);
-    $passward = htmlspecialchars($passward);
+    $password = htmlspecialchars($password);
     $goiken = htmlspecialchars($goiken);
 
 
@@ -44,11 +44,11 @@
     	print'</br>';
     }
 
-    if($passward == ''){
+    if($password == ''){
         print'パスワードが入力されていません。';
     }else{
         print'パスワード';
-        print $passward;
+        print $password;
         print'</br>';
     }
 
@@ -60,7 +60,7 @@
     	print'</br>';
     }
 
-    if($nickname == ''|| $email == ''|| $goiken == ''){
+    if($nickname == ''|| $email == '' || $password == ''|| $goiken == ''){
         print '<form>';
 
         //onclick = "history.back()これはJavaScriptを利用しており、便利な機能
@@ -76,7 +76,7 @@
         print '<input name = "nickname" type = "hidden" value = "'.$nickname.'">';
         // . ドットで文字と文字を連結している
         print '<input name = "email" type = "hidden" value = "'.$email.'">';
-        print '<input name = "passward" type = "hidden" value = "'.$passward.'">';
+        print '<input name = "password" type = "hidden" value = "'.$password.'">';
         print '<input name = "goiken" type = "hidden" value = "'.$goiken.'">';
         print '<input type = "button" onclick = "history.back()" value = "戻る">';
         print '<input type = "submit" value = "OK">';
