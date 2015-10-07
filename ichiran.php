@@ -9,6 +9,8 @@
   <body>
 
     <h1>投稿一覧</h1>
+
+    <form method = "post" action = "update.php" >
     <?php
         //投稿された内容の一覧を表示させる
 
