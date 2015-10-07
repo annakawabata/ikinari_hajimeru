@@ -36,7 +36,8 @@
                 print $row['code'];
                 print $row['nickname'];
                 print $row['goiken'];
-                print sprintf('<a href="delete.php?code=%d">削除</a>',$row['code']);
+                print sprintf('<a href="delete.php?code=%d">[削除]</a>',$row['code']);
+                print sprintf('<a href="update.php?code=%d">[編集]</a>',$row['code']);
                 print '</br>';
                 // var_dump($row['code']);
             }
@@ -48,7 +49,6 @@
 
 
     ?>
-    <a href="delete.php?id=<?php echo h($post['code']); ?>" style="color: #F33;">削除</a>
     </br>
     <a href="menu.html">メニューに戻る</a></br>
   </body>
