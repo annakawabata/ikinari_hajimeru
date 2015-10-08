@@ -13,10 +13,11 @@
 	$table = mysqli_fetch_array($record);
 }
 
-//更新している
+//編集後保存させる
 if(!empty($_POST)){
-	if($_POST['goiken'] != ''){
-		$sql = sprintf('UPDATE * SET goiken="%s" WHERE id=%d',
+	//var_dump($_POST);
+	if($_POST['goiken'] != ''){ //アスタリスクいらない
+		$sql = sprintf('UPDATE anketo SET goiken="%s" WHERE code=%d',
 			mysqli_real_escape_string($db,$_POST['goiken']),
 			mysqli_real_escape_string($db,$_GET['code']));
 
@@ -37,6 +38,7 @@ if(!empty($_POST)){
 
   </head>
   <body>
+  <form method = "post">
   <!--<?php if(isset($_REQUEST['code'])){print $table['nickname'].'様';}?>
   これはcode(id)をリクエストしてその中のデータをプリントしている-->
   ニックネーム:<?php if(isset($_REQUEST['code'])){print $table['nickname'].'様';}?></br>
