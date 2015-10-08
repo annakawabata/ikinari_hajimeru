@@ -39,28 +39,31 @@
     if($email == ''){
     	print'メールアドレスが入力されていません。';
     }else{
-    	print'メールアドレス';
+    	print'メールアドレス[';
     	print $email;
-    	print'</br>';
+    	print']</br>';
     }
 
     if($password == ''){
         print'パスワードが入力されていません。';
+    }elseif(strlen($password)> 4 ){
+        $error['password'] = 'length';
+        print'*パスワードは4文字以内で入力してください';
     }else{
-        print'パスワード';
+        print'パスワード[';
         print $password;
-        print'</br>';
+        print']</br>';
     }
 
     if($goiken == ''){
     	print'ご意見が入力されていません。';
     }else{
-    	print'ご意見';
+    	print'ご意見[';
     	print $goiken;
-    	print'</br>';
+    	print']</br>';
     }
 
-    if($nickname == ''|| $email == '' || $password == ''|| $goiken == ''){
+    if($nickname == ''|| $email == '' || $password == ''|| $password == 'length'|| $goiken == ''){
         print '<form>';
 
         //onclick = "history.back()これはJavaScriptを利用しており、便利な機能
@@ -79,7 +82,7 @@
         print '<input name = "password" type = "hidden" value = "'.$password.'">';
         print '<input name = "goiken" type = "hidden" value = "'.$goiken.'">';
         print '<input type = "button" onclick = "history.back()" value = "戻る">';
-        print '<input type = "submit" value = "OK">';
+        print '<input type = "submit" value = "送信">';
         print '</form>';
     }
     ?>
