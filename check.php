@@ -46,7 +46,7 @@
 
     if($password == ''){
         print'パスワードが入力されていません。';
-    }elseif(strlen($password)> 4 ){
+    }elseif(mb_strlen($password)< 4 ){
         $error['password'] = 'length';
         print'*パスワードは4文字以内で入力してください';
     }else{
@@ -63,7 +63,7 @@
     	print']</br>';
     }
 
-    if($nickname == ''|| $email == '' || $password == ''|| $password == 'length'|| $goiken == ''){
+    if($nickname == ''|| $email == '' || $password == ''|| $error['password'] == 'length'|| $goiken == ''){
         print '<form>';
 
         //onclick = "history.back()これはJavaScriptを利用しており、便利な機能
